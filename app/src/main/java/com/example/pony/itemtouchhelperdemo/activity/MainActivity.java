@@ -1,13 +1,14 @@
-package com.example.pony.itemtouchhelperdemo;
+package com.example.pony.itemtouchhelperdemo.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.example.pony.itemtouchhelperdemo.Adapter.GalleryAdapter;
+import com.example.pony.itemtouchhelperdemo.R;
 import com.example.pony.itemtouchhelperdemo.callback.ItemDragAndSwipeCallback;
 
 import java.util.ArrayList;
@@ -43,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragAndSwipeCallback);
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);
+
+        Intent intent = new  Intent(this,MultiItemActivity.class);
+        startActivity(intent);
     }
 
     private void initDatas()
